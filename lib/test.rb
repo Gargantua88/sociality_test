@@ -37,10 +37,8 @@ class Test
     end
 
     case user_input
-    when "y" then
-      @balls += 2
-    when "s" then
-      @balls += 1
+    when "y" then @balls += 2
+    when "s" then @balls += 1
     end
 
     @current_question += 1
