@@ -1,5 +1,5 @@
-require_relative 'test'
-require_relative 'result_printer'
+require_relative 'lib/test'
+require_relative 'lib/result_printer'
 
 user_name = ARGV[0]
 user_name = "Тестируемый" if user_name == nil
