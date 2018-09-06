@@ -5,12 +5,16 @@ class Test
   def initialize(questions_file)
     @points = 0
     @current_question = 0
-    @questions = File.readlines(questions_file)
+
+    if File.exist?(questions_file)
+      @questions = File.readlines(questions_file)
+    else
+      abort "\nФайл с вопросами не найден!"
+    end
   end
 
   def answers_check
     user_input = nil
-
     until ["y", "n", "s"].include?(user_input)
       puts "Введите y, n или s"
       user_input = STDIN.gets.chomp.downcase

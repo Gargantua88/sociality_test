@@ -4,7 +4,12 @@ class ResultPrinter
 
   def initialize(user_name, answers_file)
     self.user_name = user_name
-    @answers = File.readlines(answers_file)
+
+    if File.exist?(answers_file)
+      @answers = File.readlines(answers_file)
+    else
+      abort "\nФайл с результатами не найден!"
+    end
   end
 
   def result(points)
